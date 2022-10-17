@@ -8,7 +8,6 @@ function initMap() {
 
     // Utworzenie mapy
     const map = new google.maps.Map(document.getElementById("map"), {mapId: "8dcbc94f9673a06d", options});
-    
 
     // Punkty na mapie
     addMarker({coords: {lat: 50.06150395284862, lng: 19.93267669291806},
@@ -42,6 +41,24 @@ function initMap() {
             infoWindow.open(map, marker);
         });
     }
+
+
+    // Uzupełnianie automatyczne inputa w Module
+    const autocompleteInput = document.getElementById('location-modal');
+    const autocomplete = new google.maps.places.Autocomplete(autocompleteInput, {
+        fields: ["address_components", "geometry", "name"],
+        types: ["address"],
+    });
+    autocomplete.addListener('place_changed', function () {
+        const place = autocomplete.getPlace();
+        if (!place.geometry) {
+            window.alert('Nie znaleźliśmy takiego miejsca jak: \'' + place.name + '\'');
+            return;
+        }
+        lat = parseFloat(place.geometry.location.lng());
+        lng = parseFloat(place.geometry.location.lat());
+    });
+
 }
 
 window.initMap = initMap;

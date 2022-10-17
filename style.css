@@ -5,15 +5,12 @@
     padding: 0px;
 }
 
-html,body {
-    margin: 0;
-    padding: 0;
-}
-
 body{
     font-family: 'Roboto', sans-serif;
     height: 100vh;
 }
+
+/* Menu */
 
 nav{
     background-color: #2B2D42;
@@ -44,6 +41,7 @@ nav{
     color: #EF233C;
 }
 
+/* Sekcja główna */
 .main{
     width: 100%;
 }
@@ -68,6 +66,7 @@ nav{
     width: 50%;
 }
 
+/* Filtry */
 .filter{
     width: 60%;
     float: right;
@@ -107,6 +106,7 @@ nav{
     border: 1px solid #fa7484;
 }
 
+/* Oferty */
 .oferts{
     padding: 10px 0;
     height: 85vh;
@@ -137,6 +137,15 @@ nav{
     float: left;
 }
 
+.info{
+    color: #818181;
+}
+
+.price{
+    color: #EF233C;
+}
+
+/* Mapka */
 .right-offert{
     text-align: right;
     padding-top: 20px;
@@ -146,14 +155,6 @@ nav{
 
 .left-offert img{
     width: 80%;
-}
-
-.info{
-    color: #818181;
-}
-
-.price{
-    color: #EF233C;
 }
 
 .right-element{
@@ -186,14 +187,57 @@ nav{
   
   /* Modal Treść */
 .modal-content {
+    border-radius: 5px;
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
     width: 25%;
 }
-  
-  /* Zamknij guzik */
+
+.modal-content h2{
+    color: #2B2D42;
+}
+
+form{
+    padding-top: 20px;
+}
+
+.input{
+    padding-top: 10px;
+    width: 60%;
+    margin: 0px 20%;
+}
+
+.input input, .input select{
+    width: 100%;
+    padding: 5px 0px 5px 3px;
+    border-radius: 4px;
+    border: 1px solid #818181;
+}
+
+#other-input{
+    display: none;
+}
+
+.input-btn{
+    padding-top: 20px;
+    text-align: center;
+}
+
+#btnModal{
+    padding: 8px 80px;
+    background-color: #EF233C;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+}
+
+#btnModal:hover{
+    background-color: #fa7484;
+}
+
+/* Zamknij guzik */
 .close {
     color: #fa7484;
     float: right;
@@ -207,42 +251,6 @@ nav{
     text-decoration: none;
     cursor: pointer;
 }
-
-.modal-content h2{
-    color: #2B2D42;
-}
-
-form{
-    padding-top: 20px;
-}
-
-.input{
-    padding-top: 10px;
-    text-align: center;
-}
-
-.input input{
-    padding: 5px 20px 5px 3px;
-    border-radius: 4px;
-    border: 1px solid #818181;
-}
-
-.input-btn{
-    text-align: center;
-}
-
-#btnModal{
-    padding: 5px 80px;
-    background-color: #EF233C;
-    color: #fff;
-    border: none;
-    border-radius: 15px;
-}
-
-#btnModal:hover{
-    background-color: #fa7484;
-}
-
 
 /* RWD */
 @media only screen and (max-width: 1400px) {
@@ -331,6 +339,10 @@ form{
         margin: 10px 10% 10px 5%;
         width: 85%;
         float: left;
+    }
 
+    .input{
+        width: 90%;
+        margin: 0px 5%;
     }
 }

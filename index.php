@@ -33,22 +33,29 @@
             <form>
                 <div class="input">
                     <label for='work'>Typ zadania:</label><br>
-                    <input type='text' id='work'>
+                    <select id='work' onchange='validateOption(this)'>
+                        <option value="" selected disabled hidden>Wybierz typ zadania</option>
+                        <option value="Koszenie trawnika">Koszenie trawnika</option>
+                        <option value="Opieka nad zwierzątkiem">Opieka nad zwierzątkiem</option>
+                        <option value="Sprzątanie">Sprzątanie</option>
+                        <option value="Porządki w ogródku">Porządki w ogródku</option>
+                        <option value="Inne">Inne</option>
+                    </select>
+                </div>
+
+                <div class="input" id='other-input'>
+                    <label for='other'>Inne typ zadania:</label><br>
+                    <input type='text' id='other' placeholder='Wprowadź zadanie'>
                 </div>
 
                 <div class="input">
                     <label for='price'>Cena:</label><br>
-                    <input type='number' id='price' min='10'>
+                    <input type='number' id='price' min='10' placeholder='Wprowadź kwotę'>
                 </div>
 
                 <div class="input">
-                        <label for='street'>Ulica:</label><br>
-                        <input type='text' id='street'>
-                </div>
-
-                <div class="input">
-                    <label for='city'>Miasto:</label><br>
-                    <input type='text' id='city'><br><br>
+                        <label for='location-modal'>Lokalizacja:</label><br>
+                        <input type='text' id='location-modal'>
                 </div>
 
                 <div class="input-btn">
@@ -472,6 +479,8 @@
 
     <script src='map.js'></script>
     <script src='modal.js'></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqQcsuIdAemTykF1UZ0AN_1yifNyj1IDU&callback=initMap&v=weekly" defer></script>
+
+    <!-- google -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqQcsuIdAemTykF1UZ0AN_1yifNyj1IDU&callback=initMap&v=weekly&libraries=places&solution_channel=GMP_QB_addressselection_v1_cAC" defer></script>
 </body>
 </html>
