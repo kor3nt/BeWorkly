@@ -167,5 +167,170 @@ nav{
     padding: 0;
     width: 100%;
     height: 92vh;
+}
+
+/* Modal*/
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
+}
+  
+  /* Modal Treść */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 25%;
+}
+  
+  /* Zamknij guzik */
+.close {
+    color: #fa7484;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+    color: #EF233C;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h2{
+    color: #2B2D42;
+}
+
+form{
+    padding-top: 20px;
+}
+
+.input{
+    padding-top: 10px;
+    text-align: center;
+}
+
+.input input{
+    padding: 5px 20px 5px 3px;
+    border-radius: 4px;
+    border: 1px solid #818181;
+}
+
+.input-btn{
+    text-align: center;
+}
+
+#btnModal{
+    padding: 5px 80px;
+    background-color: #EF233C;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+}
+
+#btnModal:hover{
+    background-color: #fa7484;
+}
+
+
+/* RWD */
+@media only screen and (max-width: 1400px) {
+    .left{
+        width: 100%;
+    }
+    .right{
+        display: none;
+    }
+
+    .modal-content {
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .left-offert{
+        display: none;
+    }
+
+    .center-offert{ 
+        width: 70%;
+        font-size: small !important;
+    }
+    .right-offert{ 
+        width: 30%;
+        font-size: small !important;
+    }
+    .filter{
+        width: 100%;
+    }
+    #addBtn{
+        margin: 10px 5%;
+        padding: 5px 0px;
+        width: 90%;
+    }
+
+    #div_search{
+        margin: 10px 5%;
+        width: 40%;
+    }
     
+    #div_location{
+        margin: 10px 5%;
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #div_search{
+        margin: 10px 1% 10px 5%;
+        width: 40%;
+    }
+    
+    #div_location{
+        margin: 10px 5% 10px 1%;
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .input-filter{
+        width: 100%;
+    }
+    
+    .input-filter input{
+        width: 100%;
+    }
+
+    .center-offert{ 
+        width: 70%;
+        font-size: smaller !important;
+    }
+    .right-offert{ 
+        width: 30%;
+        font-size: 12px !important;
+    }
+
+    #div_search{
+        margin: 10px 10% 10px 5%;
+        width: 85%;
+        float: left;
+    }
+    
+    #div_location{
+        margin: 10px 10% 10px 5%;
+        width: 85%;
+        float: left;
+
+    }
 }
