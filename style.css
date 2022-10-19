@@ -124,6 +124,7 @@ nav{
     padding: 5px 10px;
     box-shadow: 0px 0px 3px black;
     border-radius: 5px;
+    
 }
 
 .left-offert{
@@ -143,6 +144,20 @@ nav{
 
 .price{
     color: #EF233C;
+}
+
+/* Brak ofert */
+.none{
+    margin-top: 20px;
+    text-align: center;
+    display: none;
+}
+.none h1{
+    font-size: 40px;
+    color:#EF233C;
+}
+.none p{
+    font-size: 20px;
 }
 
 /* Mapka */

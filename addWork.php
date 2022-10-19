@@ -27,7 +27,7 @@ try
 	}
 	else
 	{	
-	    if ($connect->query("INSERT INTO oferta VALUES ('$userID', '$work', '$price', '$location', '$lng', '$lat', '$photo', NULL, 0)"))
+	    if ($connect->query("INSERT INTO oferta VALUES (NULL, '$userID', '$work', '$price', '$location', '$lng', '$lat', '$photo', NULL, 0)"))
 		{
 			echo 'success';
         }
