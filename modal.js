@@ -58,6 +58,8 @@ btnAdd.addEventListener("click", ()=> {
           // Zwrócenie poprawnego wyniku
           if(/success/.test(data)){
             $('.loading').hide();
+            $('#send').show();
+            modal.style.display = "none";
           }
 
           // Serwer wyłączony / awaria

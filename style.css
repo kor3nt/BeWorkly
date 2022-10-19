@@ -170,6 +170,23 @@ nav{
     height: 92vh;
 }
 
+.map-location, .map-user{
+    color:#818181;
+}
+
+.map-btn{
+    margin: 5px;
+    padding: 5px 10px;
+    color: #fff;
+    background: #EF233C;
+    border-radius: 15px;
+    text-decoration: none;
+}
+
+.map-btn:hover{
+    background: #fa7484;
+}
+
 /* Modal*/
 .modal {
     display: none; 
@@ -266,6 +283,12 @@ form{
     }
 }
 
+@media only screen and (max-width: 900px) {
+    .text-success{
+        top: 25% !important;
+    }
+}
+
 @media only screen and (max-width: 720px) {
     .left-offert{
         display: none;
@@ -351,7 +374,7 @@ form{
 /* Ekran ładowania */
 .loading{
     text-align: center;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.85);
     width: 100%;
     height: 100%;
     display: none;
@@ -395,3 +418,90 @@ form{
       transform: rotate(360deg);
     }
   }
+
+/* Ekran powodzenia */
+.text-success{
+    color: white;
+    text-align: center;
+    position: relative;
+    top: 10%;
+}
+
+.text-success h1{
+    color: #EF233C;
+}
+
+#send{ 
+    background: rgba(17, 17, 17, 0.8);
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: absolute;
+    z-index: 20;
+}
+
+.wrapper{
+    top: 20%;
+    position: relative;
+    justify-content:center;
+    align-items:center;
+}
+
+.checkmark__circle{
+    stroke-dasharray: 498;
+    stroke-dashoffset: 498;
+    stroke-width: 6;
+    stroke-miterlimit: 30;
+    stroke: #7ac142;
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards
+}
+.checkmark{
+    width: 168px;
+    height: 168px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 6;
+    stroke: #fff;
+    stroke-miterlimit: 30;
+    margin: 10% auto;
+    box-shadow: inset 0px 0px 0px #7ac142;
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both
+}
+.checkmark__check{
+    transform-origin: 50% 50%;
+    stroke-dasharray: 144;
+    stroke-dashoffset: 144;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards
+}
+@keyframes stroke{
+    100%{
+        stroke-dashoffset: 0
+    }
+}
+@keyframes scale{
+    0%, 100%{
+        transform: none
+    }
+    50%{
+        transform: scale3d(1.1, 1.1, 1)
+    }
+}
+@keyframes fill{
+    100%{
+        box-shadow: inset 0px 0px 0px 100px #7ac142
+    }
+}
+
+.return-button{
+    background: #EF233C;
+    padding: 5px 25px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.return-button:hover{
+    background: #fa7484;
+
+}

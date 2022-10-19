@@ -17,7 +17,10 @@ function initMap() {
     
     addMarker({coords: {lat: 50.06177344880018, lng: 19.934279599981885},
         // icon: 'https://www.shareicon.net/data/512x512/2015/11/02/665856_flag_512x512.png',
-        content: '<h1>ELOO</h1><p>Witamy</p>'
+        content: '<h1>Koszenie trawnika</h1>' 
+        + '<p class="map-location"><i class="fa fa-map-marker" aria-hidden="true"></i> Kraków ul. Loretańska 16</p>' 
+        + '<p class="map-user"><i class="fa fa-user" aria-hidden="true"></i> Patryk</p>' 
+        + '<br>' + '<a class="map-btn" href="#">Przejdź do ogłoszenia</a>'
     });
     
     addMarker({coords: {lat: 50.061200069834555, lng: 19.93203316205854},
@@ -56,6 +59,7 @@ function initMap() {
             window.alert('Nie znaleźliśmy takiego miejsca jak: \'' + place.name + '\'');
             return;
         }
+
         lat = parseFloat(place.geometry.location.lng());
         lng = parseFloat(place.geometry.location.lat());
     });
