@@ -15,7 +15,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-    
+    <!-- Ekran ładowania -->
+    <div class="loading">
+        <div class="lds-ring"><div></div><div></div></div>
+    </div>
+
+
     <nav>
         <div class="nav-content">
             <h1 class='logo'>BeWorkly</h1>
@@ -32,9 +37,9 @@
             
             <form>
                 <div class="input">
-                    <label for='work'>Typ zadania:</label><br>
+                    <label for='work'>Nazwa zadania:</label><br>
                     <select id='work' onchange='validateOption(this)'>
-                        <option value="" selected disabled hidden>Wybierz typ zadania</option>
+                        <option value="" selected disabled hidden>Wybierz nazwę zadania</option>
                         <option value="Koszenie trawnika">Koszenie trawnika</option>
                         <option value="Opieka nad zwierzątkiem">Opieka nad zwierzątkiem</option>
                         <option value="Sprzątanie">Sprzątanie</option>
@@ -44,7 +49,7 @@
                 </div>
 
                 <div class="input" id='other-input'>
-                    <label for='other'>Inne typ zadania:</label><br>
+                    <label for='other'>Wprowadź nazwę zadanie:</label><br>
                     <input type='text' id='other' placeholder='Wprowadź zadanie'>
                 </div>
 
@@ -108,7 +113,7 @@
                         <div class="offert">
                             <div class="row">
                                 <div class="left-offert">
-                                    <img src='img/kosiarka.png' alt='kosiarka'>
+                                    <img src='img/sprzatanie.png' alt='kosiarka'>
                                 </div>
                                 <div class="center-offert">
                                     <h1>Koszenie trawnika</h1>
@@ -128,7 +133,7 @@
                         <div class="offert">
                             <div class="row">
                                 <div class="left-offert">
-                                    <img src='img/kosiarka.png' alt='kosiarka'>
+                                    <img src='img/zwierzatko.png' alt='kosiarka'>
                                 </div>
                                 <div class="center-offert">
                                     <h1>Koszenie trawnika</h1>
@@ -148,7 +153,7 @@
                         <div class="offert">
                             <div class="row">
                                 <div class="left-offert">
-                                    <img src='img/kosiarka.png' alt='kosiarka'>
+                                    <img src='img/ogrod.png' alt='kosiarka'>
                                 </div>
                                 <div class="center-offert">
                                     <h1>Koszenie trawnika</h1>
@@ -168,7 +173,7 @@
                         <div class="offert">
                             <div class="row">
                                 <div class="left-offert">
-                                    <img src='img/kosiarka.png' alt='kosiarka'>
+                                    <img src='img/inne.png' alt='kosiarka'>
                                 </div>
                                 <div class="center-offert">
                                     <h1>Koszenie trawnika</h1>

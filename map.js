@@ -48,6 +48,7 @@ function initMap() {
     const autocomplete = new google.maps.places.Autocomplete(autocompleteInput, {
         fields: ["address_components", "geometry", "name"],
         types: ["address"],
+        componentRestrictions: { country: "pl" },
     });
     autocomplete.addListener('place_changed', function () {
         const place = autocomplete.getPlace();

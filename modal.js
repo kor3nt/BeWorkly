@@ -28,17 +28,44 @@ btnAdd.addEventListener("click", ()=> {
   var work = document.getElementById('work');
   var price = document.getElementById('price');
   var location = document.getElementById('location-modal');
-  
-
+  var photo = choosePhoto(work.value.trim())
 
   var errorWork = validateOption(work)
   var errorPrice = validatePrice(price)
-  var errorLocation = validateText(location)
+  var errorLocation = validateLocation(location)
 
 
   if(errorWork && errorPrice && errorLocation){
     if(work.value == 'Inne' && validateText(document.getElementById('other')) || work.value != 'Inne'){
-      console.log('success')
+      console.log('success') 
+      $('.loading').show();
+      $.ajax({
+        type: "POST",
+        url: "addWork.php",
+        data: {
+          work: work.value.trim(),
+          price: parseInt(price.value.trim()),
+          location: location.value.trim(),
+          other: document.getElementById('other').value.trim(),
+          photo: photo,
+          lat: lat,
+          lng: lng
+        },
+        cache: false,
+        success: function(data) {
+          console.log(data);
+
+          // Zwrócenie poprawnego wyniku
+          if(/success/.test(data)){
+            $('.loading').hide();
+          }
+
+          // Serwer wyłączony / awaria
+          if(/servers/.test(data)){
+            alert('Błąd serwera! Przepraszamy za niedogodności i prosimy o skontaktowanie się z administracją!')
+          }
+        }
+      });
     }
   }
 })
@@ -46,6 +73,7 @@ btnAdd.addEventListener("click", ()=> {
 
 // Walidacja danych - Funkcje
 function validatePrice(price){
+  console.log(parseInt(price.value.trim()))
   if(price.value.trim() < 10){
     price.style.border = '2px solid #EF233C';
     return false;
@@ -73,7 +101,7 @@ function validateOption(element){
   return true;
 }
 
-function validateText(element){
+function validateLocation(element){
   if(!element.value.trim()){
     element.style.border = '2px solid #EF233C';
     return false;
@@ -84,7 +112,50 @@ function validateText(element){
     return false;
   }
   
+  if(!(/^[a-zA-Z0-9ąćśżźńłóęĄĆŚŻŹŃŁÓĘ., ]+$/.test(element.value.trim()))){ 
+    element.style.border = '2px solid #EF233C';
+    return false;
+  }
+
   element.style.border = '1px solid #818181';
   return true;
 }
 
+function validateText(element){
+  if(!element.value.trim()){
+    element.style.border = '2px solid #EF233C';
+    return false;
+  }
+  
+  if(!(/^[a-zA-ZąćśżźńłóęĄĆŚŻŹŃŁÓĘ., ]+$/.test(element.value.trim()))){ 
+    element.style.border = '2px solid #EF233C';
+    return false;
+  }
+
+  element.style.border = '1px solid #818181';
+  return true;
+}
+
+
+// Wybór zdjęcie
+function choosePhoto(work){
+  let photo;
+  switch(work){
+    case 'Koszenie trawnika':
+      photo = 'kosiarka'
+      break;
+    case 'Opieka nad zwierzątkiem':
+      photo = 'zwierzatko'
+      break;
+    case 'Sprzątanie':
+      photo = 'sprzatanie'
+      break;
+    case 'Porządki w ogródku':
+      photo = 'ogrod'
+      break;
+    default: 
+      photo = 'inne'
+  }
+
+  return photo;
+}
