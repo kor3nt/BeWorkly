@@ -6,8 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Duoly">
         <title>BeWorkly</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="done.css">
+        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="stylesheet" href="CSS/done.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     </head>
     <body>
@@ -79,14 +79,17 @@
                             <p id="errorpass" class="error" style="display: none;">Podaj hasło!</p>
                             <p id="errorpass2" class="error" style="display: none;">Potwierdź hasło!</p>
                             <p id="errorage" class="error" style="display: none;">Jesteś za młody, aby założyć konto!</p>
-                            <p id="errorPassMatch" class="error" style="display: none;">Hasła nie są takie same</p>                        </form>
+                            <p id="errorPassMatch" class="error" style="display: none;">Hasła nie są takie same</p>
+                            <p id="errorPassPattern" class="error" style="display: none;">Hasło musi składać się z minimum 8 znaków oraz zawierać wielką literę, przynajmniej jedną cyfre oraz znak specjalny!</p>
+                            <p id="errorOccEmail" class="error" style="display: none;">Konto o podanym emailu już istnieje!</p>    
+                        </form>
                         <div id="helpAndCreate">
                             <p><span>LUB</span></p>
                             <a id="helpPass" href="#">Masz już konto? Zaloguj się</a><br>
                         </div>
                     </div>
                 </div>
-                <div class="column">
+                <div class="column1">
                         <img src="IMG/grafika_panel_logowanie.svg" alt="grafika_panel_logowanie">
                 </div>
             </div>
@@ -98,7 +101,8 @@
             </p>
         </footer>
         
-        <script src="script.js"></script>
+        <script src="SCRIPTS/script.js"></script>
+        <script src="SCRIPTS/ajax.js"></script>
         
     </body>
 </html>
