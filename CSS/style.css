@@ -24,7 +24,6 @@ nav{
 #formright{
     float: right;
     padding-right: 10%;
-    width: 35%;
 }
 form{
     width: 100%;
@@ -75,7 +74,7 @@ input{
     border-radius: 3px;
     border: #BABABA 2px solid;
     padding: 5px;
-    width: 95%;
+    width: 300px;
     margin-bottom: 20px;
     margin-top: 5px;
 }
@@ -84,8 +83,7 @@ input{
     background-color: #EF233C;
     border: 1px solid #EF233C;
     border-radius: 100px;
-    width: 100%;
-    padding: 10px;
+    padding: 10px 100px 10px 100px;
     margin: auto;
     font-size: 15px;
     cursor: pointer;
@@ -96,6 +94,7 @@ input{
 .btnCenter{
     width: 100%;
     text-align: center;
+    padding-bottom: 10px;
 }
 label{
     font-size: 15px;
@@ -103,10 +102,10 @@ label{
 img{
     width: 500px;
 }
-#helpAndCreate a{
+.btnCenter a{
     color: #457B9D;
 }
-#helpAndCreate p{
+.btnCenter p{
     border-bottom: 1px solid #8D99EA;
     color: #8D99EA;
     font-size: 18px;
@@ -114,28 +113,31 @@ img{
     position: relative;
     text-align: center;
 }
-#helpAndCreate p span{
+.btnCenter p span{
     background: #fff;
     padding: 0 15px;
     position: relative;
     top: 10px;
 }
-#helpPass{
-    font-size: 12px;
-}
-#btnCreate{
+#btnLogin{
     color: white !important;
     text-decoration: none;
     background-color: #2F2E41;
     border: 1px solid #2F2E41;
     border-radius: 100px;
-    padding: 10px 100px 10px 100px;
+    padding: 10px 40px 10px 40px;
     margin: auto;
     font-size: 15px;
+    margin-bottom: 60px;
 }
-#btnCreate:hover{
+#btnLogin:hover{
     opacity: 0.9;
 }
+main{
+    height: 100vh;
+}
+
+/* validacja */ 
 .error{
     color: rgb(196, 3, 3);
     font-weight: bold;
@@ -162,19 +164,49 @@ img{
     clear: both;
 }
 
-/* stopka */
-footer{
-    padding: 20px 0px 20px 0px;
-    width: 100%;
-    color: white;
-    background-color: #2F2E41;
-    text-align: center;
-    position: absolute;
-    bottom: 0;
-}
-footer a{
-    color: #EF233C;
-}
 @media (max-width: 1250px) {
-    
+    .column1{
+        display: none;
+    }
+    .column{
+        width: 100%;
+        margin: auto;
+        float: none;
+    }
+    #formright{
+        padding: 5px 5px 5px 5px;
+        float: none;
+        margin: auto;
+    }
+    input{
+        width: 300px;
+    }
+    form{
+        width: fit-content;
+        margin: auto;
+        padding-bottom: 5px;
+    }
+    #steps{
+        display: none;
+    }
+    #helpAndCreate{
+        width: 40%;
+        margin: auto;
+    }
+}
+@media (max-width: 330px){
+    input{
+        width: 220px;
+    }
+    #btnLogin{
+        font-size: 12px;
+        padding: 10px 30px 10px 30px;
+    }
+    .btnSubmit{
+        font-size: 12px;
+        padding: 10px 60px 10px 60px;
+    }
+    #helpAndCreate{
+        width: 90%;
+    }
 }
