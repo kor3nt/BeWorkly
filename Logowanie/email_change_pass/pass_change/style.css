@@ -1,0 +1,134 @@
+/* import czcionek */
+
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&family=Roboto&display=swap%27');
+
+html, body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+/* nawigacja */
+nav h1{
+    font-family: 'Fuzzy Bubbles', cursive;
+    color: white;
+    position: relative;
+    margin: auto;
+    font-size: 40px;
+}
+nav{
+    padding: 10px 0px 10px 20px;
+    background-color: #2F2E41;
+}
+
+/* main */
+#formright{
+    float: right;
+    padding-right: 10%;
+}
+form{
+    width: 100%;
+    margin-bottom: 10px;
+}
+#slogan {
+    font-size: 30px;
+    text-align: center;
+}
+input{
+    border-radius: 3px;
+    border: #bababa 2px solid;
+    padding: 5px;
+    width: 300px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+#btnSubmit{
+    color: white;
+    background-color: #EF233C;
+    border: 1px solid #EF233C;
+    border-radius: 100px;
+    padding: 10px 110px 10px 110px;
+    margin: auto;
+}
+#btnCenter{
+    width: 100%;
+    text-align: center;
+}
+#btnSubmit:hover{
+    opacity: 0.8;
+}
+label{
+    font-size: 15px;
+}
+img{
+    width: 60%;
+}
+
+/* kolumna */
+.column{
+    float: left;
+    width: 50%;
+    padding-top: 13vh;
+}
+.column1{
+    float: right;
+    width: 50%;
+    padding-top: 10vh;
+}
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* stopka */
+footer{
+    padding: 20px 0px 20px 0px;
+    color: white;
+    background-color: #2F2E41;
+    text-align: center;
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+}
+footer a{
+    color: #EF233C;
+}
+
+/* responsywność */
+@media (max-width: 1250px){
+    .column1{
+        display: none;
+    }
+    .column{
+        width: 100%;
+    }
+    #formright{
+        float: none;
+        margin: auto;
+        padding: 0;
+    }
+    form{
+        width: fit-content;
+        margin: auto;
+        padding-bottom: 5px;
+    }
+    #widthOr{
+        width: 40%;
+        margin: auto;
+    }
+    footer{
+        margin-top: 20px;
+        position: absolute;
+    }
+}
+@media (max-width: 340px){
+    input{
+        width: 200px;
+    }
+    #btnSubmit{
+        padding: 10px 70px 10px 70px;
+    }
+    #btnCreate{
+        padding: 10px 60px 10px 60px;
+    }
+}

@@ -8,20 +8,14 @@ function initMap() {
 
     // Utworzenie mapy
     const map = new google.maps.Map(document.getElementById("map"), {mapId: "8dcbc94f9673a06d", options});
-    
-    // Punkty na mapie
-    
 
-    
 
     // Dodawanie punktów na mapie
-
-    // https://developers.google.com/maps/documentation/javascript/marker-clustering#cdn
     jQuery(function() {
       var infowindow = new google.maps.InfoWindow({
         content: '',
       });
-
+      
       jQuery.each(tabMarkers, function(i, m) {
         var marker = new google.maps.Marker({
           position: new google.maps.LatLng(m.lat, m.lng),
@@ -34,8 +28,8 @@ function initMap() {
           infowindow.setContent(m.content);
           infowindow.open(map, marker);
         });
-
       });
+      
     });
 
 

@@ -13,10 +13,10 @@
         }
         else{
             $userID = 2;
-            if ($result = @$connect->query("SELECT * FROM oferta WHERE zleceniodawca_id != 2 AND odebrana != 1"))
+            if ($result = @$connect->query("SELECT * FROM oferta WHERE zleceniodawca_id != $userID AND odebrana != 1"))
             {
-                $numberOferts = $result->num_rows;
-                if($numberOferts > 0){
+                $numberOffer = $result->num_rows;
+                if($numberOffer > 0){
                     while($row = $result->fetch_assoc()){
                         $table[] = $row;
                     }

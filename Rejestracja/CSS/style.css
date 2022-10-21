@@ -1,0 +1,212 @@
+/* import czcionek */
+
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&family=Roboto&display=swap%27');
+
+html, body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+/* nawigacja */
+nav h1{
+    font-family: 'Fuzzy Bubbles', cursive;
+    color: white;
+    position: relative;
+    margin: auto;
+    font-size: 40px;
+}
+nav{
+    padding: 10px 0px 10px 20px;
+    background-color: #2F2E41;
+}
+
+/* main */
+#formright{
+    float: right;
+    padding-right: 10%;
+}
+form{
+    width: 100%;
+    margin-bottom: 10px;
+}
+#steps{
+    margin: auto;
+    text-align: center;
+}
+.step{
+    background-color: #BABABA;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    padding: 10px;
+    display: inline-block;
+    margin: 0;
+    z-index: 1000;
+}
+.line{
+    display: inline-block;
+    position: relative;
+    background-color: #BABABA;
+    height: 2px;
+    width: 20px;
+    margin: 0;
+    top:-4px;
+}
+.activeLine{
+    background-color: #EF233C;
+}
+.activeStep{
+    background-color: #EF233C;
+}
+.nextStep{
+    border: solid 2px #EF233C;
+    padding: 9px;
+}
+#slogan {
+    font-size: 30px;
+    text-align: center;
+}
+#helpAndCreate{
+    text-align: center;
+}
+input{
+    border-radius: 3px;
+    border: #BABABA 2px solid;
+    padding: 5px;
+    width: 300px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+.btnSubmit{
+    color: white;
+    background-color: #EF233C;
+    border: 1px solid #EF233C;
+    border-radius: 100px;
+    padding: 10px 100px 10px 100px;
+    margin: auto;
+    font-size: 15px;
+    cursor: pointer;
+}
+.btnSubmit:hover{
+    opacity: 0.8;
+}
+.btnCenter{
+    width: 100%;
+    text-align: center;
+    padding-bottom: 10px;
+}
+label{
+    font-size: 15px;
+}
+img{
+    width: 500px;
+}
+.btnCenter a{
+    color: #457B9D;
+}
+.btnCenter p{
+    border-bottom: 1px solid #8D99EA;
+    color: #8D99EA;
+    font-size: 18px;
+    margin-bottom: 30px;
+    position: relative;
+    text-align: center;
+}
+.btnCenter p span{
+    background: #fff;
+    padding: 0 15px;
+    position: relative;
+    top: 10px;
+}
+#btnLogin{
+    color: white !important;
+    text-decoration: none;
+    background-color: #2F2E41;
+    border: 1px solid #2F2E41;
+    border-radius: 100px;
+    padding: 10px 40px 10px 40px;
+    margin: auto;
+    font-size: 15px;
+    margin-bottom: 60px;
+}
+#btnLogin:hover{
+    opacity: 0.9;
+}
+main{
+    height: 100vh;
+}
+
+/* validacja */ 
+.error{
+    color: rgb(196, 3, 3);
+    font-weight: bold;
+    font-size: 1.4vh;
+}
+.errorInput{
+    border: #EF233C 2px solid;
+}
+
+/* kolumna */
+.column{
+    float: left;
+    width: 50%;
+    padding-top: 40px;
+}
+.column1{
+    float: left;
+    width: 50%;
+    padding-top: 20vh;
+}
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media (max-width: 1250px) {
+    .column1{
+        display: none;
+    }
+    .column{
+        width: 100%;
+        margin: auto;
+        float: none;
+    }
+    #formright{
+        padding: 5px 5px 5px 5px;
+        float: none;
+        margin: auto;
+    }
+    input{
+        width: 300px;
+    }
+    form{
+        width: fit-content;
+        margin: auto;
+        padding-bottom: 5px;
+    }
+    #steps{
+        display: none;
+    }
+    #helpAndCreate{
+        width: 40%;
+        margin: auto;
+    }
+}
+@media (max-width: 330px){
+    input{
+        width: 220px;
+    }
+    #btnLogin{
+        font-size: 12px;
+        padding: 10px 30px 10px 30px;
+    }
+    .btnSubmit{
+        font-size: 12px;
+        padding: 10px 60px 10px 60px;
+    }
+    #helpAndCreate{
+        width: 90%;
+    }
+}

@@ -1,3 +1,17 @@
+<?php
+    session_start();
+
+    if (!(isset($_SESSION['fname']))){
+        header('Location: Logowanie');
+        exit();
+    }
+
+    if(!(isset($_SESSION['email']))){
+        header('Location: Logowanie');
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -29,7 +43,7 @@
         <div class="text-success">
             <h1>Powodzenie!</h1>
             <p>Utworzyłeś swoje zlecenie.</p><br>
-            <a class='return-button' onclick='location.reload()'>Powrót</a>
+            <a class='return-button' onclick='location.reload()'>Ok</a>
         </div>
     </div>
 
@@ -37,10 +51,11 @@
         <div class="nav-content">
             <h1 class='logo'>BeWorkly</h1>
 
-            <p class='profil'><span class='profile-icon'><i class="fa fa-user-o" aria-hidden="true"></i></span> Klaudiusz</p>
+            <p class='profil'><span class='profile-icon'><i class="fa fa-user-o" aria-hidden="true"></i></span> <?php echo $_SESSION['fname']; ?></p>
         </div>
     </nav>
 
+    <!-- Modal Dodaj -->
     <div id="addModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -124,9 +139,37 @@
         </div>
     </div>
 
+
+    <div id="ModalOffer" class="modalOffer" style='display:none'>
+        <div class="modal-content">
+            <span id="closeModal">&times;</span>
+            <div class="main-modal">
+                <div class="title-modal">
+                    <h1 id='title-offer'></h1>
+                </div>
+                <div class="info-modal">
+                    <p><i class="fa fa-map-marker" aria-hidden="true"></i> <span id="location-offer-modal"></span></p>
+                    <p><i class="fa fa-user" aria-hidden="true"></i> <span id="user-offer-modal"></span></p><br>
+                    
+                    <p>Zarobek: <span id="cost-offer-modal"><span id='amount-modal'></span> zł</span></p><br>
+
+                    <small>1. W celu skontakowania się z zleceniodawcą odbierz zlecenie.</small><br>
+                    <small>2. Następnie wygeneruje się umowa, którą należy uzupełnić.</small><br>
+                    <small>3. Gdy już wszystko uzgodnione udaj się na miejsce, aby wykonać pracę.</small>
+                </div>
+
+                <div class="button-content">
+                    <button class='btnModalOffer' type='button'>Odbierz</button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
     <script src='map.js'></script>
     <script src='modal.js'></script>
     <script src='write.js'></script>
+    <script src='modalOffer.js'></script>
 
     <!-- google -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqQcsuIdAemTykF1UZ0AN_1yifNyj1IDU&callback=initMap&v=weekly&libraries=places&solution_channel=GMP_QB_addressselection_v1_cAC" defer></script>
