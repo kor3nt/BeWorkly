@@ -21,7 +21,10 @@ function openModal(offer){
             $('#location-offer-modal').html(tabMarkers[i]['location']);
             $('#user-offer-modal').html(tabMarkers[i]['person']);
             $('#amount-modal').html(tabMarkers[i]['cost']);
+            $('#idOffer').html(tabMarkers[i]['id']);
             break;
         }
     }
 }
+
+

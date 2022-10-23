@@ -42,7 +42,7 @@
 
         <div class="text-success">
             <h1>Powodzenie!</h1>
-            <p>Utworzyłeś swoje zlecenie.</p><br>
+            <p id='success-p'></p><br>
             <a class='return-button' onclick='location.reload()'>OK</a>
         </div>
     </div>
@@ -151,6 +151,7 @@
                 <div class="info-modal">
                     <p><i class="fa fa-map-marker" aria-hidden="true"></i> <span id="location-offer-modal"></span></p>
                     <p><i class="fa fa-user" aria-hidden="true"></i> <span id="user-offer-modal"></span></p><br>
+                    <p id='idOffer' style='display:none'></p>
                     
                     <p>Zarobek: <span id="cost-offer-modal"><span id='amount-modal'></span> zł</span></p><br>
 
@@ -161,7 +162,7 @@
                 </div>
 
                 <div class="button-content">
-                    <button class='btnModalOffer' type='button'>Odbierz</button>
+                    <button class='btnModalOffer' type='button' onclick="getOffer()">Odbierz</button>
                 </div>
             </div>
             
@@ -173,9 +174,47 @@
     <script src='write.js'></script>
     <script src='modalOffer.js'></script>
     
+    <script>
+        function getOffer(){
+            $('.loading').show();
+            let idOffer = $('#idOffer').text();
+            console.log(idOffer);
+
+            $.ajax({
+                type: "POST",
+                url: "setOffer.php",
+                data: {
+                    idOffer: idOffer
+                },
+                cache: false,
+                success: function(data) {
+                    console.log(data);
+
+                    // Zwrócenie poprawnego wyniku
+                    if(/success/.test(data)){
+                        $('.loading').hide();
+                        $('#success-p').html('Odebrałeś zlecenie. Wykonaj wszystko według instrukcji.');
+                        $('#send').show();
+                        window.location = 'umowa.docx';
+                        
+                    }
+
+                    // Serwer wyłączony / awaria
+                    if(/servers/.test(data)){
+                        alert('Błąd serwera! Przepraszamy za niedogodności i prosimy o skontaktowanie się z administracją!')
+                    }
+                }
+            });
+
+            
+        }
+    </script>
+
     <?php
+    if(isset($_SESSION['fun'])){
         echo "<script>".$_SESSION["fun"].";</script>";
         unset($_SESSION['fun']);
+    }
     ?>
 
     <!-- google -->

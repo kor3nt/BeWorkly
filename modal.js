@@ -37,7 +37,6 @@ btnAdd.addEventListener("click", ()=> {
 
   if(errorWork && errorPrice && errorLocation){
     if(work.value == 'Inne' && validateText(document.getElementById('other')) || work.value != 'Inne'){
-      console.log('success') 
       $('.loading').show();
       $.ajax({
         type: "POST",
@@ -58,6 +57,7 @@ btnAdd.addEventListener("click", ()=> {
           // Zwrócenie poprawnego wyniku
           if(/success/.test(data)){
             $('.loading').hide();
+            $('#success-p').html('Utworzyłeś swoje zlecenie.');
             $('#send').show();
             modal.style.display = "none";
           }
