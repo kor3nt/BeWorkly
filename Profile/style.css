@@ -1,3 +1,4 @@
+/* import czcionek */
 @import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&family=Roboto&display=swap%27');
 
 body, html{
@@ -5,36 +6,37 @@ body, html{
     padding: 0;
     font-family: 'Roboto', sans-serif;
 }
-header{
-    width: 100%;
-    height: 75px;
-    color: white;
-    background-color: #2b2d42;
-}
-#logo{
-    width: 30%;
-    float: left;
-    text-align: center;
-    height: 75px;
+/* nawigacja */
+nav h1{
     font-family: 'Fuzzy Bubbles', cursive;
+    color: white;
+    position: relative;
+    margin: auto;
+    font-size: 40px;
     cursor: pointer;
 }
 nav{
-    width: 70%;
-    float: right;
-    text-align: right;
-    height: 75px;
+    padding: 10px 0px 10px 20px;
+    background-color: #2F2E41;
+    position: relative;
 }
-nav li{
-    list-style: none;
-    display: inline-flex;
-}
-nav a{
-    color: white;
+#profilName a{
+    color: #fff;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
     text-decoration: none;
-    margin-top: 10px;
-    margin-right: 200px;
+    transition: 0.5s;
 }
+#profilName{
+    float: right;
+}
+#resp-nav{
+    display: none;
+}
+
+/* main */
 main{
     background: rgb(238, 238, 238);
     height: auto;
@@ -44,7 +46,7 @@ main{
 }
 #prof{
     width: 50%;
-    height: 50vh;
+    height: 60vh;
     margin: auto;
     text-align: center;
     background: rgba(255, 255, 255, 0.9);
@@ -110,20 +112,22 @@ main{
 #img-prof{
     width: 300px;
 }
+
+/*stopka*/
 footer{
-    background: #2b2d42;
+    padding: 20px 0px 20px 0px;
     color: white;
+    background-color: #2F2E41;
     text-align: center;
-    height: auto;
+    position:fixed;
+    bottom: 0;
     width: 100%;
-    position: fixed;
-    bottom: 0px;
-    padding: 20px;
 }
 footer a{
-    color: red;
+    color: #EF233C;
 }
 
+/* modal */
 .modal {
     display: none;
     position: fixed;
@@ -197,6 +201,7 @@ footer a{
     color:#ff0000;
 }
 
+/* responsywność*/
 @media screen and (max-width:1300px){
     #left{
         float: none;
@@ -247,5 +252,21 @@ footer a{
     #avatar{
         width: 75px;
         top: -50px;
+    }
+}
+@media screen and (max-width: 300px){
+    #resp-nav{
+        display:block;
+    }
+    #profilName a{
+        position:static;
+    }
+    #profilName{
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+    nav{
+        padding-bottom: 30px;
     }
 }

@@ -63,17 +63,12 @@
     ?></title>
 </head>
 <body>
-    <header>
-        <div id="logo">
-            <h2 onclick='location.href="../"'>BeWorkly</h2>
+    <nav>
+        <h1 onclick='location.href="../"'>BeWorkly</h1><br id="resp-nav">
+        <div id="profilName">
+            <a href="#"><span class='profile-icon'><i class="fa fa-user-o" aria-hidden="true"></i></span><?php echo $_SESSION['fname']; ?></a>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#"><?php echo $_SESSION['fname']; ?></a></li>
-            </ul>
-        </nav>
-    </header>
-
+    </nav>
     <main>
         <div id="prof">
             <img src="img/avatar.svg" alt="prof-picture" id="avatar">
@@ -86,6 +81,7 @@
                     <li><a href="../" class="lnk-prof">Szukaj zlecenia</a></li>
                     <li><a href="#" class="lnk-prof" id="myBtn" onclick="edit()">Edytuj profil</a></li>
                     <li><a href="#" class="lnk-prof">Zgłoś problem</a></li>
+                    <li><a href="logout.php" class="lnk-prof">Wyloguj</a></li>
                 </ul>
             </div>
             
@@ -110,8 +106,8 @@
     </main>
 
     <footer>
-        <p>BeWorkly &copy; Wszelkie prawa zastrzeżone.</p>
-        <p>Stworzone przez <a href="https://www.facebook.com/DuolyStudio" target="_blank">Duoly</a></p>        
+        <p>BeWorkly &copy; 2022 Wszelkie prawa zastrzeżone. <br>
+        Stworzone przez <a href="https://www.facebook.com/DuolyStudio" target="_blank">Duoly</a></p>        
     </footer>
     <script src="script.js"></script>
 </body>
