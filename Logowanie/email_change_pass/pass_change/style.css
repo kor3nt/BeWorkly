@@ -1,0 +1,271 @@
+/* import czcionek */
+
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&family=Roboto&display=swap%27');
+
+html, body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+/* nawigacja */
+nav h1{
+    font-family: 'Fuzzy Bubbles', cursive;
+    color: white;
+    position: relative;
+    margin: auto;
+    font-size: 40px;
+}
+nav{
+    padding: 10px 0px 10px 20px;
+    background-color: #2F2E41;
+}
+
+/* main */
+#formright{
+    float: right;
+    padding-right: 10%;
+}
+form{
+    width: 100%;
+    margin-bottom: 10px;
+}
+#slogan {
+    font-size: 30px;
+    text-align: center;
+}
+input{
+    border-radius: 3px;
+    border: #bababa 2px solid;
+    padding: 5px;
+    width: 300px;
+    margin-bottom: 3px;
+    margin-top: 5px;
+}
+
+.error{
+    color: red;
+    font-size: small;
+}
+
+#btnSubmit{
+    color: white;
+    background-color: #EF233C;
+    border: 1px solid #EF233C;
+    border-radius: 100px;
+    padding: 10px 110px 10px 110px;
+    margin: auto;
+}
+
+#btnCenter{
+    width: 100%;
+    text-align: center;
+}
+#btnSubmit:hover{
+    opacity: 0.8;
+}
+label{
+    font-size: 15px;
+}
+img{
+    width: 60%;
+}
+
+/* kolumna */
+.column{
+    float: left;
+    width: 50%;
+    padding-top: 13vh;
+}
+.column1{
+    float: right;
+    width: 50%;
+    padding-top: 10vh;
+}
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* stopka */
+footer{
+    padding: 20px 0px 20px 0px;
+    color: white;
+    background-color: #2F2E41;
+    text-align: center;
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+}
+footer a{
+    color: #EF233C;
+}
+
+/* responsywność */
+@media (max-width: 1250px){
+    .column1{
+        display: none;
+    }
+    .column{
+        width: 100%;
+    }
+    #formright{
+        float: none;
+        margin: auto;
+        padding: 0;
+    }
+    form{
+        width: fit-content;
+        margin: auto;
+        padding-bottom: 5px;
+    }
+    #widthOr{
+        width: 40%;
+        margin: auto;
+    }
+    footer{
+        margin-top: 20px;
+        position: absolute;
+    }
+}
+@media (max-width: 340px){
+    input{
+        width: 200px;
+    }
+    #btnSubmit{
+        padding: 10px 70px 10px 70px;
+    }
+    #btnCreate{
+        padding: 10px 60px 10px 60px;
+    }
+}
+
+
+
+/* Ekran ładowania */
+.loading{
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 20;
+    display: none;
+}
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    top: 50%;
+}
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #EF233C;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #EF233C transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+  /* Ekran powodzenia */
+.text-success{
+    color: black;
+    text-align: center;
+    position: relative;
+}
+
+.text-success h1{
+    color: #EF233C;
+}
+
+#send{ 
+    background: rgb(255, 255, 255);
+    display: none;
+    z-index: 20;
+}
+
+.wrapper{
+    position: relative;
+    justify-content:center;
+    align-items:center;
+}
+
+.checkmark__circle{
+    stroke-dasharray: 498;
+    stroke-dashoffset: 498;
+    stroke-width: 6;
+    stroke-miterlimit: 30;
+    stroke: #7ac142;
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards
+}
+.checkmark{
+    width: 168px;
+    height: 168px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 6;
+    stroke: #fff;
+    stroke-miterlimit: 30;
+    margin: 10% auto;
+    box-shadow: inset 0px 0px 0px #7ac142;
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both
+}
+.checkmark__check{
+    transform-origin: 50% 50%;
+    stroke-dasharray: 144;
+    stroke-dashoffset: 144;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards
+}
+@keyframes stroke{
+    100%{
+        stroke-dashoffset: 0
+    }
+}
+@keyframes scale{
+    0%, 100%{
+        transform: none
+    }
+    50%{
+        transform: scale3d(1.1, 1.1, 1)
+    }
+}
+@keyframes fill{
+    100%{
+        box-shadow: inset 0px 0px 0px 100px #7ac142
+    }
+}
+
+.return-button{
+    color: #EF233C;
+}
+
+.return-button:hover{
+    color: #ec7684;
+}
