@@ -192,6 +192,11 @@ footer a{
     display: none;
 }
 
+#errors{
+    font-size: small;
+    color:#ff0000;
+}
+
 @media screen and (max-width:1300px){
     #left{
         float: none;

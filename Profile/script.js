@@ -26,12 +26,48 @@ Addbtn.onclick = function(){
 }
 
 function send_about(){
-    var x = document.getElementById("about_me").value;
-    document.getElementById("o_mnie").innerHTML = x;            
-    about.style.display = "none";
+    var aboutText = document.getElementById("about_me").value;
+    
+    if(checkText(aboutText)){
+        $.ajax({
+            type: "POST",
+            url: "setAbout.php",
+            data: {
+                about: aboutText.trim(),
+            },
+            cache: false,
+            success: function(data) {
+            // Zwrócenie poprawnego wyniku
+            if(/success/.test(data)){
+                about.style.display = "none";
+                $('#o_mnie').html(aboutText);
+            }
+    
+            // Serwer wyłączony / awaria
+            if(/servers/.test(data)){
+                alert('Błąd serwera! Przepraszamy za niedogodności i prosimy o skontaktowanie się z administracją!')
+            }
+            }
+        });
+        
+    }
 }
 
 
 
-//Generator - umowa
+//Walidacja tekstu 
+function checkText(aboutText){
+    if(!aboutText.trim()){
+        document.getElementById('errors').innerHTML = 'Uzupełnij pole!';
+        return false;
+    }   
+    else if(aboutText.trim().search(/\W|_/g) != -1){
+        document.getElementById('errors').innerHTML = 'Uzupełnij pole!';
+        return false;
+    }
+    else{
+        document.getElementById('errors').innerHTML = "";
+        return true;
+    }
+}
 

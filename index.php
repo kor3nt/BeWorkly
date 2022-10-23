@@ -51,7 +51,7 @@
         <div class="nav-content">
             <h1 class='logo'>BeWorkly</h1>
 
-            <a href='logout.php' class='profil'><span class='profile-icon'><i class="fa fa-user-o" aria-hidden="true"></i></span> <?php echo $_SESSION['fname']; ?></a>
+            <a href='Profile' class='profil'><span class='profile-icon'><i class="fa fa-user-o" aria-hidden="true"></i></span> <?php echo $_SESSION['fname']; ?></a>
         </div>
     </nav>
 
@@ -168,47 +168,13 @@
             
         </div>
     </div>
-
+    
+    <script src='offer.js'></script>
     <script src='map.js'></script>
     <script src='modal.js'></script>
     <script src='write.js'></script>
     <script src='modalOffer.js'></script>
     
-    <script>
-        function getOffer(){
-            $('.loading').show();
-            let idOffer = $('#idOffer').text();
-            console.log(idOffer);
-
-            $.ajax({
-                type: "POST",
-                url: "setOffer.php",
-                data: {
-                    idOffer: idOffer
-                },
-                cache: false,
-                success: function(data) {
-                    console.log(data);
-
-                    // Zwrócenie poprawnego wyniku
-                    if(/success/.test(data)){
-                        $('.loading').hide();
-                        $('#success-p').html('Odebrałeś zlecenie. Wykonaj wszystko według instrukcji.');
-                        $('#send').show();
-                        window.location = 'umowa.docx';
-                        
-                    }
-
-                    // Serwer wyłączony / awaria
-                    if(/servers/.test(data)){
-                        alert('Błąd serwera! Przepraszamy za niedogodności i prosimy o skontaktowanie się z administracją!')
-                    }
-                }
-            });
-
-            
-        }
-    </script>
 
     <?php
     if(isset($_SESSION['fun'])){

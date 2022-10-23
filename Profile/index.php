@@ -78,7 +78,7 @@
         <div id="prof">
             <img src="img/avatar.svg" alt="prof-picture" id="avatar">
             <?php
-                echo "<h3>Cześć ".$_SESSION['fname']."</h3>";
+                echo "<h3>Cześć, ".$_SESSION['fname']."!</h3>";
             ?>
             <div id="left">
                 <ul>
@@ -86,7 +86,6 @@
                     <li><a href="../" class="lnk-prof">Szukaj zlecenia</a></li>
                     <li><a href="#" class="lnk-prof" id="myBtn" onclick="edit()">Edytuj profil</a></li>
                     <li><a href="#" class="lnk-prof">Zgłoś problem</a></li>
-                    <!--<li><a href="umowa.docx" download><i class="fa fa-download"></i> Pobierz wzór umowy</a></li>-->
                 </ul>
             </div>
             
@@ -102,7 +101,7 @@
                 <h2>O mnie</h2>
                 <form>
                     <textarea maxlength="300" placeholder="Napisz coś o sobie..." id="about_me"></textarea><br>
-                    <label for="born">Data urodzenia </label><input type="date" id="born"><br>
+                    <p id='errors'></p>
                     <button type="button" class="mod-btn" onclick="send_about()">Wyślij</button>
                     <button type="reset" class="mod-btn">Anuluj</button>
                 </form>

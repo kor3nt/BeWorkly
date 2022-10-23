@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    require_once "connect.php";
+    require_once "../connect.php";
     mysqli_report(MYSQLI_REPORT_STRICT);
 
     try {
@@ -17,9 +17,9 @@
             $user = $user->fetch_assoc();
             $userID = $user['id'];
 
-            $idOffer = $_POST['idOffer'];
+            $about = $_POST['about'];
 
-            if ($connect->query("UPDATE oferta SET odbiorca='$userID', odebrana=1 WHERE id='$idOffer'"))
+            if ($connect->query("UPDATE users_data SET about='$about' WHERE id='$userID'"))
             {
                 echo 'success';
             }

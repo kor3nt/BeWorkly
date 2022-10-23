@@ -52,8 +52,6 @@ btnAdd.addEventListener("click", ()=> {
         },
         cache: false,
         success: function(data) {
-          console.log(data);
-
           // Zwrócenie poprawnego wyniku
           if(/success/.test(data)){
             $('.loading').hide();
