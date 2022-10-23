@@ -30,10 +30,9 @@ $email = $_POST["email"];
 
                                 $token = $row['token'];
 
-                                $link = "http://localhost/BeWorkly/Logowanie/email_change_pass/pass_change?token=".$token."&email=".$email;
-
+                                
                                 require_once "sendMail.php";
-                                sendMail($email, $link);
+                                sendMail($email, $token);
 
                                 echo 'success';
                                 return false;

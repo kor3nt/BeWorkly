@@ -4,6 +4,17 @@
 <head>
     <?php
     session_start();
+
+    if (!(isset($_SESSION['fname']))){
+        header('Location: ../Logowanie');
+        exit();
+    }
+
+    if(!(isset($_SESSION['email']))){
+        header('Location: ../Logowanie');
+        exit();
+    }
+
     $fname = $_SESSION['fname'];
     $email = $_SESSION['email'];
     require_once "../connect.php";

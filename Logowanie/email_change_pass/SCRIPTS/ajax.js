@@ -10,7 +10,6 @@ $("#btnSubmit").click(() => {
     },
     cache: false,
     success: function(data) {
-        console.log(data)
         const returnEmail = /error/;
         if(returnEmail.test(data)) $("#errorEmail").show();
         else $("#errorEmail").hide();

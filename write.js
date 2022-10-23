@@ -31,7 +31,7 @@ $.ajax({
                 '<div class="offert" id="' + offerts[i]['id'] + '" onclick="openModal(this.id)">'
                     + '<div class="row">'
                         + '<div class="left-offert">'
-                            + '<img src="img/' + offerts[i]['nazwa'] + '.png" alt="' + offerts[i]['nazwa'] + '">'
+                            + '<img src="IMG/' + offerts[i]['nazwa'] + '.png" alt="' + offerts[i]['nazwa'] + '">'
                         + '</div>'
                         + '<div class="center-offert">'
                             + '<h2>'+ offerts[i]['nazwa_pracy'] +'</h2>'

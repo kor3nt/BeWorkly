@@ -61,8 +61,6 @@ $("#btnStep3").click(() => {
     },
     cache: false,
     success: function(data) {
-        console.log(data);
-
         const returnEmail = /emails/;
         if(returnEmail.test(data)){
             document.getElementById('errors-email').innerHTML = "Istnieje już konto przypisane do tego adresu e-mail!";

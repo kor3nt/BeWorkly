@@ -19,8 +19,6 @@ $(document).ready(function() {
             },
             cache: false,
             success: function(data) {
-                console.log(data);
-
                 // Email lub Token niepoprawny
                 if(/token/.test(data)){
                     document.getElementById('error').innerHTML = "Nie poprawne dane!";
