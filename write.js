@@ -9,7 +9,6 @@ $.ajax({
         $('.none').show();
     }
     else{
-
         var offerts = $.parseJSON(data);
         for(var i = 0; i<offerts.length; i++){
             tabMarkers[i] = {
@@ -17,13 +16,14 @@ $.ajax({
                 "lng": offerts[i]['lng'],
                 "content": '<h1>' + offerts[i]['nazwa_pracy'] + '</h1>'
                 +' <p class="map-location"><i class="fa fa-map-marker" aria-hidden="true"></i> ' + offerts[i]['adres'] + '</p>' 
-                + '<p class="map-user"><i class="fa fa-user" aria-hidden="true"></i> ' + offerts[i]['zleceniodawca_id'] + '</p>' 
-                + '<br>' + '<a class="map-btn" href="#">Przejdź do ogłoszenia</a>',
+                + '<p class="map-user"><i class="fa fa-user" aria-hidden="true"></i> ' + offerts[i]['fname'] + '</p>' 
+                + '<p class="map-price"><i class="fa fa-money" aria-hidden="true"></i> ' + offerts[i]['kwota'] + ' zł </p>'
+                + '<br>' + '<button type="button" class="map-btn" onclick="openModal('+ offerts[i]['id'] +')">Przejdź do ogłoszenia</button>',
 
                 "id": offerts[i]['id'],
                 "location": offerts[i]['adres'],
                 "work": offerts[i]['nazwa_pracy'],
-                "person": offerts[i]['zleceniodawca_id'],
+                "person": offerts[i]['fname'],
                 "cost": offerts[i]['kwota']
             }
 
@@ -38,7 +38,7 @@ $.ajax({
                             + '<small class="info">'
                                 + '<span id="location-offer"><i class="fa fa-map-marker" aria-hidden="true"></i> ' + offerts[i]['adres'] + '</span>'
                                 + '&nbsp; &nbsp; &nbsp;'
-                                + '<span id="user-offert"><i class="fa fa-user" aria-hidden="true"></i> '+ offerts[i]['zleceniodawca_id'] +'</span>'
+                                + '<span id="user-offert"><i class="fa fa-user" aria-hidden="true"></i> '+ offerts[i]['fname'] +'</span>'
                             + '</small>'
                         + '</div>'
                         + '<div class="right-offert">'

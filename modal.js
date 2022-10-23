@@ -161,3 +161,8 @@ function choosePhoto(work){
 
   return photo;
 }
+
+// Z profilu
+function AddWorkProfile(){
+  modal.style.display = "block";
+}

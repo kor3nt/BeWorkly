@@ -50,10 +50,13 @@ try
                 }
                 else throw new Exception($connect->error);
             }
-			if ($connect->query("INSERT INTO users_data VALUES (NULL, '$fname', '$sname', '$tel', '$date', '$parent_id', '$token')"))
+			else{
+				$parent_id = NULL;
+			}
+			if ($connect->query("INSERT INTO users_data VALUES (NULL, '$fname', '$sname', '$tel', '$date', '$parent_id', 'Nie ustawiono')"))
 			{
 
-				if ($connect->query("INSERT INTO users VALUES (NULL, '$email', '$password')"))
+				if ($connect->query("INSERT INTO users VALUES (NULL, '$email', '$password', '$token')"))
 				{
 					$_SESSION['email'] = $email;
 					$_SESSION['fname'] = $fname;

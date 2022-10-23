@@ -10,15 +10,17 @@ try
 	$work = $_POST['work'];
     $price = $_POST['price'];
     $location = $_POST['location'];
-    $other = $_POST['other'];
     $photo = $_POST['photo'];
     $lat = $_POST['lat'];
     $lng = $_POST['lng'];
 
-	$userID = '1';
+	$email = $_SESSION['email'];
+    $user = @$connect->query("SELECT * FROM users WHERE email LIKE '$email'");
+    $user = $user->fetch_assoc();
+    $userID = $user['id'];
 
-	if($work == 'inne'){
-		$work = $other;
+	if($work == 'Inne'){
+		$work = $_POST['other'];
 	}
 
 	if ($connect->connect_errno!=0)

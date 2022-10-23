@@ -12,8 +12,13 @@
             throw new Exception(mysqli_connect_errno());
         }
         else{
-            $userID = 2;
-            if ($result = @$connect->query("SELECT * FROM oferta WHERE zleceniodawca_id != $userID AND odebrana != 1"))
+
+            $email = $_SESSION['email'];
+            $user = @$connect->query("SELECT * FROM users WHERE email LIKE '$email'");
+            $user = $user->fetch_assoc();
+            $userID = $user['id'];
+
+            if ($result = @$connect->query("SELECT oferta.id, zleceniodawca_id, nazwa_pracy, kwota, adres, lng, lat, nazwa, odbiorca, odebrana, fname FROM oferta INNER JOIN users_data ON oferta.zleceniodawca_id = users_data.id WHERE zleceniodawca_id != $userID AND odebrana != 1"))
             {
                 $numberOffer = $result->num_rows;
                 if($numberOffer > 0){

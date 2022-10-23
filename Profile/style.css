@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&family=Roboto&display=swap%27');
+
+body, html{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+header{
+    width: 100%;
+    height: 75px;
+    color: white;
+    background-color: #2b2d42;
+}
+#logo{
+    width: 30%;
+    float: left;
+    text-align: center;
+    height: 75px;
+    font-family: 'Fuzzy Bubbles', cursive;
+    cursor: pointer;
+}
+nav{
+    width: 70%;
+    float: right;
+    text-align: right;
+    height: 75px;
+}
+nav li{
+    list-style: none;
+    display: inline-flex;
+}
+nav a{
+    color: white;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-right: 200px;
+}
+main{
+    background: rgb(238, 238, 238);
+    height: auto;
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom: 150px;
+}
+#prof{
+    width: 50%;
+    height: 50vh;
+    margin: auto;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 30px;
+    box-shadow: 0px 0px 4px grey;
+    padding-bottom: 30px;
+}
+#prof h3{
+    position: relative;
+    top: -50px;
+}
+#avatar{
+    width: 200px;
+    border-radius: 50%;
+    position: relative;
+    top: -75px;
+    background-color: white;
+    border: 1px solid black;
+}
+#abou_me{
+    width: 45%;
+    margin: auto;
+    height: auto;
+    display: inline-block;
+}
+#o_mnie{
+    word-wrap: break-word;
+    padding: 20px;
+    padding-top: 0px;
+}
+#left{
+    width: 49.5%;
+    height: auto;
+    float: left;
+}
+#left ul{
+    list-style: none;
+}
+#left a{
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+}
+#left li{
+    padding: 10px;
+    transition: .3s;
+    background-color: #ff0000;
+    border-radius: 5px;
+    width: 50%;
+    margin: auto;
+    margin-top: 10px;
+}
+#left li:hover{
+    letter-spacing: 2px;
+    transform: scale(1.1);
+    color: rgb(44, 44, 44);
+}
+#right{
+    width: 45%;
+    float: right;
+}
+#img-prof{
+    width: 300px;
+}
+footer{
+    background: #2b2d42;
+    color: white;
+    text-align: center;
+    height: auto;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    padding: 20px;
+}
+footer a{
+    color: red;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,40%);
+  }
+  
+.modal-content {
+    background-color: #fcfcfc;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid rgb(128, 128, 128);
+    border-radius: 2%;
+    width: 30%;
+    height: 300px;
+    text-align: center;
+}
+  
+
+.close {
+    color: rgb(110, 110, 110);
+    font-weight: bold;
+    font-size: 32px;
+    text-align: right;
+    float: right;
+    transition: .3s;
+}
+  
+.close:hover, .close:focus {
+    cursor: pointer;
+    color: rgb(7, 7, 7);
+    text-decoration: none;
+    transform: rotate(180deg);
+}
+.mod-btn{
+    background-color: #ff0000;
+    border-radius: 8%;
+    color: #fcfcfc;
+    font-weight: 600;
+    border: 0px;
+    margin: 30px;
+    padding: 10px;
+}
+#about_me{
+    border: 0px;
+    border-left: 1px solid #2b2d42;    
+    border-bottom: 1px solid #2b2d42;
+    background-color: #fcfcfc;
+    padding: 10px;
+    max-width: 75%;
+    min-width: 75%;
+    max-height: 100px;
+    min-height: 100px;
+}
+#born{
+    margin-top: 20px;
+    border: 0px;
+    border-bottom: 1px solid grey;
+    margin-left: 20px;
+}
+#download{
+    display: none;
+}
+
+@media screen and (max-width:1300px){
+    #left{
+        float: none;
+        width: 80%;
+        margin: 0 auto;
+    }
+    #prof{
+        height: auto;
+        width: 75%;
+    }
+    #abou_me{
+        margin: auto;
+        width: 80%;
+    }
+    #left li:hover{
+        transform: scale(1.1);
+        color: rgb(44, 44, 44);
+    }
+    #prof ul{
+        margin: 0px;
+        padding: 0px;
+    }
+    .modal-content{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:500px){
+    #about_me{
+        width: 75%;
+    }
+    .mod-btn{
+        margin: 5px;
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width:800px){
+    #left li{
+        width: 75%;
+    }
+    #avatar{
+        width: 150px;
+    }
+}
+
+@media screen and (max-width:400px){
+    #avatar{
+        width: 75px;
+        top: -50px;
+    }
+}

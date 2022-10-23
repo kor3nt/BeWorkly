@@ -1,3 +1,17 @@
+<?php
+    session_start();
+
+    if ((isset($_SESSION['fname']))){
+        header('Location: ../');
+        exit();
+    }
+
+    if((isset($_SESSION['email']))){
+        header('Location: ../');
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
     <head>

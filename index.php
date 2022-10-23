@@ -43,7 +43,7 @@
         <div class="text-success">
             <h1>Powodzenie!</h1>
             <p>Utworzyłeś swoje zlecenie.</p><br>
-            <a class='return-button' onclick='location.reload()'>Ok</a>
+            <a class='return-button' onclick='location.reload()'>OK</a>
         </div>
     </div>
 
@@ -51,7 +51,7 @@
         <div class="nav-content">
             <h1 class='logo'>BeWorkly</h1>
 
-            <p class='profil'><span class='profile-icon'><i class="fa fa-user-o" aria-hidden="true"></i></span> <?php echo $_SESSION['fname']; ?></p>
+            <a href='logout.php' class='profil'><span class='profile-icon'><i class="fa fa-user-o" aria-hidden="true"></i></span> <?php echo $_SESSION['fname']; ?></a>
         </div>
     </nav>
 
@@ -83,6 +83,7 @@
                 <div class="input">
                     <label for='price'>Cena:</label><br>
                     <input type='number' id='price' min='10' placeholder='Wprowadź kwotę'>
+                    <small>Minimalna kwota to 10 zł</small>
                 </div>
 
                 <div class="input">
@@ -154,8 +155,9 @@
                     <p>Zarobek: <span id="cost-offer-modal"><span id='amount-modal'></span> zł</span></p><br>
 
                     <small>1. W celu skontakowania się z zleceniodawcą odbierz zlecenie.</small><br>
-                    <small>2. Następnie wygeneruje się umowa, którą należy uzupełnić.</small><br>
-                    <small>3. Gdy już wszystko uzgodnione udaj się na miejsce, aby wykonać pracę.</small>
+                    <small>2. Uzgodnij z zleceniodawcą szczegóły.</small><br>
+                    <small>3. Następnie wygeneruje się umowa, którą należy uzupełnić.</small><br>
+                    <small>4. Gdy już wszystko uzgodnione udaj się na miejsce, aby wykonać zlecenie.</small>
                 </div>
 
                 <div class="button-content">
@@ -170,6 +172,11 @@
     <script src='modal.js'></script>
     <script src='write.js'></script>
     <script src='modalOffer.js'></script>
+    
+    <?php
+        echo "<script>".$_SESSION["fun"].";</script>";
+        unset($_SESSION['fun']);
+    ?>
 
     <!-- google -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqQcsuIdAemTykF1UZ0AN_1yifNyj1IDU&callback=initMap&v=weekly&libraries=places&solution_channel=GMP_QB_addressselection_v1_cAC" defer></script>

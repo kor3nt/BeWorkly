@@ -1,23 +1,23 @@
 
 $("#btnSubmit").click(() => {
     var email = $("#email").val();
-    var pass = $("#pass").val();
 
     $.ajax({
         type: "POST",
         url: "PHP/send.php",
         data: {
             email: email,
-            password: pass,
     },
     cache: false,
     success: function(data) {
+        console.log(data)
         const returnEmail = /error/;
-        if(returnEmail.test(data)) $("#errorEmailPass").show();
-        else $("#errorEmailPass").hide();
+        if(returnEmail.test(data)) $("#errorEmail").show();
+        else $("#errorEmail").hide();
 
         if(/success/.test(data)){
-            window.location.href = "../";
+            $("#formright").hide();
+            $("#checkEmail").show();
         }
 
         if(/servers/.test(data)){

@@ -40,19 +40,6 @@ $("#btnStep2").click(() => {
     lastStep();
 });
 
-$("#btnStep3").click(() => {
-    if($("#pass").val()!=$("#pass2").val()){
-        $("#errorPassMatch").show();
-        return;
-    } 
-    else{
-        $("#errorPassMatch").hide();
-    }
-
-    if($(".error").is(":hidden") && $(".empty").is(":hidden")){
-        return;
-    } 
-});
 
 // Walidacja - puste pola
 $("input").blur((event) => {

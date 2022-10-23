@@ -1,3 +1,17 @@
+<?php
+    session_start();
+
+    if ((isset($_SESSION['fname']))){
+        header('Location: ../../');
+        exit();
+    }
+
+    if((isset($_SESSION['email']))){
+        header('Location: ../../');
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
     <head>
@@ -17,35 +31,30 @@
             <div class="row">
                 <div class="column">
                     <div id="formright">
-                        <p id="slogan">Zacznij już teraz!</p>
+                        <p id="slogan">Zmiana hasła!</p>
                         <form>
                             <label for="email">E-mail:</label><br>
                             <input type="email" id="email" name="email" required><br>
-                            <label for="pass">Hasło:</label><br>
-                            <input type="password" id="pass" name="pass" required><br><br>
                             <div id="btnCenter">
-                                <button id="btnSubmit" type="button">Zaloguj się</button><br>
+                                <button id="btnSubmit" type="button">Wyślij</button><br>
                             </div>
-                            <p id="errorEmailPass" class="error" style="display: none;">Niepoprawyn email lub hasło!</p>    
+                            <p id="errorEmail" class="error" style="display: none;">Konto o podanym emailu nie istnieje!</p>    
                         </form>
-                        <div id="helpAndCreate">
-                            <a id="passSize" href="email_change_pass/">Nie pamiętasz hasła?</a><br>
-                            <div id="widthOr">
-                                <p><span>LUB</span></p>
-                            </div>
-                            <a id="btnCreate" href="../Rejestracja">Stwórz konto</a>
-                        </div>
+                    </div>
+                    <div id="checkEmail" style="display: none;">
+                        <p id="slogan">Wysłaliśmy wiadomość!</p>
+                        <p id="text">Sprawdź swoją skrzynkę pocztową, wysłaliśmy na nią link do zmiany hasła.</p>
                     </div>
                 </div>
                 <div class="column1">
-                        <img src="IMG/grafika_panel_logowanie.svg" alt="grafika_panel_logowanie">
+                        <img src="IMG/image_email_confirm.svg" alt="image_email_confirm">
                 </div>
             </div>
         </main>
         <footer>
             <p>
                 BeWorkly &copy; 2022 Wszelkie prawa zastrzeżone. <br>
-                Stworzone przez <a target="_blank" href="https://www.facebook.com/DuolyStudio">Duoly</a>
+                Stworzone przez <a href="#">Duoly</a>
             </p>
         </footer>
         <script src="SCRIPTS/ajax.js"></script>

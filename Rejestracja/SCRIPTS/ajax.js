@@ -21,7 +21,21 @@ $("#btnStep2").click(() => {
     if($("#parent_tel").val()=="")tab.push("-");
     else tab.push($("#parent_tel").val());
 });
+
+// Przesyłanie danych z js do php
 $("#btnStep3").click(() => {
+    if($("#pass").val()!=$("#pass2").val()){
+        $("#errorPassMatch").show();
+        return;
+    } 
+    else{
+        $("#errorPassMatch").hide();
+    }
+
+    if($(".error").is(":visible") || $(".empty").is(":visible")){
+        return;
+    }
+
     if(!underAge){
         tab.push("-");
         tab.push("-");
@@ -29,13 +43,7 @@ $("#btnStep3").click(() => {
         tab.push("-");
     }
     tab.push($("#pass").val());
-    console.log(tab);
-});
 
-
-
-// Przesyłanie danych z js do php
-$("#btnStep3").click(() => {
     $.ajax({
         type: "POST",
         url: "PHP/send.php",
