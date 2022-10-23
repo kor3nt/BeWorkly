@@ -66,7 +66,7 @@
     <nav>
         <h1 onclick='location.href="../"'>BeWorkly</h1><br id="resp-nav">
         <div id="profilName">
-            <a href="#"><span class='profile-icon'><i class="fa fa-user-o" aria-hidden="true"></i></span><?php echo $_SESSION['fname']; ?></a>
+            <a href="#"><span class='profile-icon'><i class="fa fa-user-o" aria-hidden="true"></i> </span><?php echo $_SESSION['fname']; ?></a>
         </div>
     </nav>
     <main>

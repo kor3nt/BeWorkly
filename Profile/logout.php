@@ -4,6 +4,6 @@
 	
 	session_unset();
 	
-	header('Location: logowanie');
+	header('Location: ../logowanie');
 
 ?>
