@@ -16,5 +16,10 @@ Ustawiamy maila i hasło
 
 `$mail -> setFrom("twojemail@gmail.com");`
 
+Musimy także ustawić link:
+Nasz przykład na naszej stronie 
+1. `$mail -> Body = "https://esportwzse.pl/BeWorkly/Logowanie/email_change_pass/pass_change.php?token=".$token."&email=".$email;`
+2. `$mail -> Body = "http://localhost/BeWorkly/Logowanie/email_change_pass/pass_change.php?token=".$token."&email=".$email;`
+
 Zapisujemy i gotowe!
 
