@@ -185,6 +185,6 @@
     ?>
 
     <!-- google -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqQcsuIdAemTykF1UZ0AN_1yifNyj1IDU&callback=initMap&v=weekly&libraries=places&solution_channel=GMP_QB_addressselection_v1_cAC" defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=KEY&callback=initMap&v=weekly&libraries=places&solution_channel=GMP_QB_addressselection_v1_cAC" defer></script>
 </body>
 </html>
