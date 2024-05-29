@@ -1,6 +1,6 @@
 # BeWorkly
 Projekt wykonany na Hack Heroes 2022. 
-Nasze rozwiązanie odpowiada na problem zarabiania przez osoby nieletnie (od 13 roku życia). Stworzyliśmy stronę internetową, która jest swego rodzaju skupiskiem ofert pracy z danego regionu. Osoba chcąca zarobić pieniądze, może przeglądać liczne oferty i w zasadzie od swoich preferencji przyjmować zlecenia.
+Nasze rozwiązanie odpowiada na problem zarabiania przez osoby nieletnie (od 13 roku życia). Stworzyliśmy stronę internetową, która jest swego rodzaju skupiskiem ofert pracy z danego regionu. 
 
 ## Import tabel do bazy danych
 Wchodzimy w folder `Bazy danych`.
